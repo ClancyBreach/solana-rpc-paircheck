@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "solana-rpc-paircheck"
+dynamic = ["version"]
+description = "Offline core consistency checks for paired Solana RPC JSON files"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "ClancyBreach"}]
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = []
+
+[project.scripts]
+solana-rpc-paircheck = "solana_rpc_paircheck.cli:main"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "solana_rpc_paircheck.__version__"}
